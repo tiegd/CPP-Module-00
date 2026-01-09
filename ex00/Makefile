@@ -21,6 +21,7 @@ $(NAME): $(OBJ)
 
 $(BIN)%.o: $(SRC)%.cpp
 	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(BIN):
 	mkdir -p $(BIN)
