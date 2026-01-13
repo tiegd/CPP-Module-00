@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 15:49:20 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/01/13 13:22:13 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/01/13 14:53:04 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ class	Contact
 {
 	public:
 		Contact();
+		~Contact();
 };
 
 #endif
