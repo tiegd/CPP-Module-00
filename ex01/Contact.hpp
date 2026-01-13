@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/12 16:16:09 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/01/13 13:31:45 by gaducurt         ###   ########.fr       */
+/*   Created: 2026/01/12 15:49:20 by gaducurt          #+#    #+#             */
+/*   Updated: 2026/01/13 13:22:13 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
-#include "PhoneBook.hpp"
+#ifndef	__CONTACT__
+#define	__CONTACT__
 
-int	main()
+class	Contact
 {
-	Contact		contact;
-	PhoneBook	phonebook;
-	return (0);
-}
+	public:
+		Contact();
+};
+
+#endif
