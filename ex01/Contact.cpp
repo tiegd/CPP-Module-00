@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 15:26:51 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/01/14 17:26:42 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/01/22 17:05:13 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,27 +20,32 @@ Contact::Contact()
 
 void	Contact::add_first_name(std::string str)
 {
-	Contact::first_name = str;
+	first_name = str;
 }
 
 void	Contact::add_last_name(std::string str)
 {
-	Contact::last_name = str;
+	last_name = str;
 }
 
 void	Contact::add_num(std::string str)
 {
-	Contact::num = str;
+	num = str;
 }
 
-void	Contact::add_order(int nb)
+void	Contact::add_id(int nb)
 {
-	Contact::order = nb;
+	id = nb;
 }
 
 void	Contact::switch_order()
 {
-	Contact::order--;
+	id--;
+}
+
+int	Contact::get_id(Contact contact)
+{
+	return (contact.id);
 }
 
 Contact::~Contact()
