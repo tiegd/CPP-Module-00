@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 15:27:32 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/01/23 15:20:19 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/01/23 19:51:47 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ void	PhoneBook::display_phonebook()
 {
 	if (PhoneBook::nb_contact == 0)
 		std::cout << "The PhoneBook is empty" << std::endl;
+	else
+		for (int i = 0; i < nb_contact; i++)
+			contact_tab[i].print_contact();
 }
 
 void	PhoneBook::slide_contact()
@@ -31,7 +34,7 @@ void	PhoneBook::slide_contact()
 	int	i;
 	
 	i = 0;
-	while (i < 7)
+	while (i < 6)
 	{
 		contact_tab[i] = contact_tab[i + 1];
 		contact_tab[i].switch_order();
@@ -39,21 +42,18 @@ void	PhoneBook::slide_contact()
 	}
 }
 
-void	PhoneBook::add_contact(std::string first_name, std::string last_name,
-					std::string nickname, std::string num, std::string secret)
+void	PhoneBook::add_contact()
 {
 	if (nb_contact == 8)
 	{
+		std::cout << "error" << std::endl;
 		PhoneBook::slide_contact();
-		contact_tab[nb_contact].fill_data(first_name, last_name, nickname,
-										num, secret, nb_contact);
+		contact_tab[nb_contact].fill_data(nb_contact);
 	}
 	if (nb_contact < 8)
 	{
-		contact_tab[nb_contact].fill_data(first_name, last_name, nickname,
-										num, secret, nb_contact + 1);
+		contact_tab[nb_contact].fill_data(nb_contact + 1);
 		nb_contact++;
-		
 	}
 }
 

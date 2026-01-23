@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 16:16:09 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/01/23 18:16:18 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/01/23 19:35:46 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,19 @@ int	main()
 	PhoneBook	phonebook;
 	std::string	prompt;
 	
-	phonebook.display_phonebook();
 	while (1)
 	{
-		std::cout << "prompt >>" << std::endl;
-		std::cin >> prompt;
+		std::getline(std::cin, prompt);
 		if (prompt == "ADD")
-			std::cout << "add contact" << std::endl;
+		{
+			phonebook.add_contact();
+		}
 		if (prompt == "SEARCH")
-			std::cout << "display a contact" << std::endl;
+		{
+			phonebook.display_phonebook();
+		}
 		if (prompt == "EXIT")
-			return (0);
-		// std::getline(std::cin, prompt);
+		return (0);
 	}
 	return (0);
 }
