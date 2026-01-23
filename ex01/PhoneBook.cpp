@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 15:27:32 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/01/22 17:03:41 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/01/23 15:20:19 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	PhoneBook::display_phonebook()
 		std::cout << "The PhoneBook is empty" << std::endl;
 }
 
-void	PhoneBook::delete_contact()
+void	PhoneBook::slide_contact()
 {
 	int	i;
 	
@@ -39,18 +39,22 @@ void	PhoneBook::delete_contact()
 	}
 }
 
-void	PhoneBook::add_contact(Contact contact)
+void	PhoneBook::add_contact(std::string first_name, std::string last_name,
+					std::string nickname, std::string num, std::string secret)
 {
-	if (nb_contact == 0)
-		nb_contact++;
 	if (nb_contact == 8)
-		PhoneBook::delete_contact();
+	{
+		PhoneBook::slide_contact();
+		contact_tab[nb_contact].fill_data(first_name, last_name, nickname,
+										num, secret, nb_contact);
+	}
 	if (nb_contact < 8)
 	{
+		contact_tab[nb_contact].fill_data(first_name, last_name, nickname,
+										num, secret, nb_contact + 1);
 		nb_contact++;
-		contact.add_id(nb_contact + 1);
+		
 	}
-	contact_tab[nb_contact - 1] = contact;
 }
 
 PhoneBook::~PhoneBook()

@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 15:26:51 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/01/22 17:05:13 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/01/23 15:23:47 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,34 +18,20 @@ Contact::Contact()
 	std::cout << "Création d'un contact" << std::endl;
 }
 
-void	Contact::add_first_name(std::string str)
-{
-	first_name = str;
-}
-
-void	Contact::add_last_name(std::string str)
-{
-	last_name = str;
-}
-
-void	Contact::add_num(std::string str)
-{
-	num = str;
-}
-
-void	Contact::add_id(int nb)
-{
-	id = nb;
-}
-
 void	Contact::switch_order()
 {
 	id--;
 }
 
-int	Contact::get_id(Contact contact)
+void	Contact::fill_data(std::string s_first_name, std::string s_last_name,
+			std::string s_nickname, std::string s_num, std::string s_secret, int i_id)
 {
-	return (contact.id);
+	first_name = s_first_name;
+	last_name = s_last_name;
+	nickname = s_nickname;
+	num = s_num;
+	secret = s_secret;
+	id = i_id;
 }
 
 Contact::~Contact()
