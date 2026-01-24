@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 15:27:32 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/01/24 17:30:30 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/01/24 17:35:17 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 PhoneBook::PhoneBook()
 {
 	PhoneBook::nb_contact = 0;
-	// std::cout << "Création du PhoneBook" << std::endl;
 }
 
 void	PhoneBook::display_phonebook()
@@ -80,5 +79,4 @@ void	PhoneBook::add_contact()
 
 PhoneBook::~PhoneBook()
 {
-	std::cout << "Destruction du PhoneBook" << std::endl;
 }

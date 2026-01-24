@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 15:26:51 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/01/24 16:59:03 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/01/24 17:35:50 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 Contact::Contact()
 {
-	// std::cout << "Création d'un contact" << std::endl;
 }
 
 void	Contact::switch_order()
@@ -142,5 +141,4 @@ void	Contact::print_one_contact()
 
 Contact::~Contact()
 {
-	std::cout << "Destruction d'un contact" << std::endl;
 }
