@@ -1,8 +1,8 @@
 NAME = megaphone
 
-CC = c++
+CXX = c++
 
-CFLAGS = -Wall -Wextra -Werror -MMD -MP -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -MD -std=c++98
 
 INCLUDE = inc
 
@@ -17,11 +17,11 @@ DEPS =   $(OBJ:.o=.d)
 all: $(BIN) $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 
 $(BIN)%.o: $(SRC)%.cpp
 	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(BIN):
 	mkdir -p $(BIN)

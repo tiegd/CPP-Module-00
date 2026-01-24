@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 10:53:28 by gaducurt          #+#    #+#             */
-/*   Updated: 2025/10/15 16:19:55 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/01/24 17:42:45 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int main(int ac, char **av)
 			}
 			i++;
 		}
-		std::cout << "\n";
+		std::cout << std::endl;
 	}
     return (0);
 }
