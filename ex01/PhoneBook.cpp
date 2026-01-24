@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 15:27:32 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/01/23 19:51:47 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/01/24 12:02:44 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	PhoneBook::slide_contact()
 	i = 0;
 	while (i < 6)
 	{
+		std::cout << i << std::endl;
 		contact_tab[i] = contact_tab[i + 1];
 		contact_tab[i].switch_order();
 		i++;
@@ -48,7 +49,7 @@ void	PhoneBook::add_contact()
 	{
 		std::cout << "error" << std::endl;
 		PhoneBook::slide_contact();
-		contact_tab[nb_contact].fill_data(nb_contact);
+		contact_tab[nb_contact - 1].fill_data(nb_contact);
 	}
 	if (nb_contact < 8)
 	{
