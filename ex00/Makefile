@@ -4,8 +4,6 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -MD -std=c++98
 
-INCLUDE = inc
-
 BIN = bin/
 			
 SRC =	megaphone.cpp	\
