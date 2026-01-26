@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 16:16:09 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/01/23 19:35:46 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/01/26 14:11:54 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main()
 	PhoneBook	phonebook;
 	std::string	prompt;
 	
-	while (1)
+	while (std::cin.good())
 	{
 		std::getline(std::cin, prompt);
 		if (prompt == "ADD")

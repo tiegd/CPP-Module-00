@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 15:27:32 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/01/24 17:35:17 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/01/26 15:56:06 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ void	PhoneBook::display_phonebook()
 				std::cout << "Please enter an index contact between  1 and " << nb_contact << " : ";
 			std::string	index;
 			std::getline(std::cin, index);
+			if (!std::cin.good())
+				break;
 			std::stringstream ss(index);
 			int	i;
 			if (index.empty() || (ss >> i).fail() || !ss.eof() || i <= 0 || i > nb_contact)
@@ -68,7 +70,8 @@ void	PhoneBook::add_contact()
 	if (nb_contact == 8)
 	{
 		PhoneBook::slide_contact();
-		contact_tab[nb_contact - 1].fill_data(nb_contact);
+		contact_tab[7].delete_datas();
+		contact_tab[7].fill_data(nb_contact);
 	}
 	if (nb_contact < 8)
 	{

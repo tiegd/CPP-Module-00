@@ -6,13 +6,14 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 15:26:51 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/01/24 17:35:50 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/01/26 15:58:24 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 #include <iostream>
 #include <cstring>
+#include <iomanip>
 
 Contact::Contact()
 {
@@ -23,111 +24,83 @@ void	Contact::switch_order()
 	id--;
 }
 
+bool	Contact::check_contact()
+{
+	if (!first_name.length())
+		return (false);
+	if (!last_name.length())
+		return (false);
+	if (!nickname.length())
+		return (false);
+	if (!num.length())
+		return (false);
+	if (!secret.length())
+		return (false);
+	return (true);
+}
+
+void	Contact::delete_datas()
+{
+	first_name.clear();
+	last_name.clear();
+	nickname.clear();
+	num.clear();
+	secret.clear();
+}
+
 void	Contact::fill_data(int i_id)
 {
-	std::cout << "Firstname : ";
-	std::getline(std::cin, first_name);
-	std::cout << "Lastname : ";
-	std::getline(std::cin, last_name);
-	std::cout << "Nickname : ";
-	std::getline(std::cin, nickname);
-	std::cout << "Num : ";
-	std::getline(std::cin, num);
-	std::cout << "Darket secret : ";
-	std::getline(std::cin, secret);
-	id = i_id;
+	while (!check_contact())
+	{
+		std::cout << "Please fill all the fields\n" << std::endl;
+		std::cout << "Firstname : ";
+		std::getline(std::cin, first_name);
+		std::cout << "Lastname : ";
+		std::getline(std::cin, last_name);
+		std::cout << "Nickname : ";
+		std::getline(std::cin, nickname);
+		std::cout << "Num : ";
+		std::getline(std::cin, num);
+		std::cout << "Darket secret : ";
+		std::getline(std::cin, secret);
+		std::cout << std::endl;
+		id = i_id;
+	}
 }
 
 void	Contact::print_first_name()
 {
-	int	len = first_name.length();
-	int	spaces = 10 - len;
-
-	for (int j = 0; j < 10; j++)
-	{
-		if (spaces > 0)
-		{
-			if (j < spaces)	
-				std::cout << " ";
-			else
-				std::cout << first_name[j - spaces];
-		}
-		if (spaces <= 0)
-		{
-			if (first_name[j] && j == 9)
-			{
-				std::cout << ".";
-				break;
-			}
-			else if (first_name[j])
-				std::cout << first_name[j];
-		}
-	}
+	if (first_name.length() <= 10)
+		std::cout << std::setw(10) << first_name;
+	else
+		std::cout << first_name.substr(0, 9) << '.';
+	std::cout << "|";
 }
 
 void	Contact::print_last_name()
 {
-	int	len = last_name.length();
-	int	spaces = 10 - len;
-
-	for (int j = 0; j < 10; j++)
-	{
-		if (spaces > 0)
-		{
-			if (j < spaces)	
-				std::cout << " ";
-			else
-				std::cout << last_name[j - spaces];
-		}
-		if (spaces <= 0)
-		{
-			if (last_name[j] && j == 9)
-			{
-				std::cout << ".";
-				break;
-			}
-			else if (last_name[j])
-				std::cout << last_name[j];
-		}
-	}
+	if (last_name.length() <= 10)
+		std::cout << std::setw(10) << last_name;
+	else
+		std::cout << last_name.substr(0, 9) << '.';
+	std::cout << "|";
 }
 
 void	Contact::print_nickname()
 {
-	int	len = nickname.length();
-	int	spaces = 10 - len;
-
-	for (int j = 0; j < 10; j++)
-	{
-		if (spaces > 0)
-		{
-			if (j < spaces)	
-				std::cout << " ";
-			else
-				std::cout << nickname[j - spaces];
-		}
-		if (spaces <= 0)
-		{
-			if (nickname[j] && j == 9)
-			{
-				std::cout << ".";
-				break;
-			}
-			else if (nickname[j])
-				std::cout << nickname[j];
-		}
-	}
+	if (nickname.length() <= 10)
+		std::cout << std::setw(10) << nickname;
+	else
+		std::cout << nickname.substr(0, 9) << '.';
+	std::cout << std::endl;
 }
 
 void	Contact::print_contact()
 {
-	std::cout << "         " << id << "|";
+	std::cout << std::setw(10) << id << '|';
 	print_first_name();
-	std::cout << "|";
 	print_last_name();
-	std::cout << "|";
 	print_nickname();
-	std::cout << std::endl;
 }
 
 void	Contact::print_one_contact()

@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 15:49:20 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/01/24 16:58:48 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/01/26 15:56:28 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ class	Contact
 		void	print_first_name();
 		void	print_last_name();
 		void	print_nickname();
+		void	delete_datas();
+		bool	check_contact();
 		~Contact();
 };
 
