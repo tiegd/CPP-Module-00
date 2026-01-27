@@ -6,7 +6,7 @@
 /*   By: gaducurt <gaducurt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 15:26:51 by gaducurt          #+#    #+#             */
-/*   Updated: 2026/01/26 15:58:24 by gaducurt         ###   ########.fr       */
+/*   Updated: 2026/01/27 14:50:38 by gaducurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,14 +55,24 @@ void	Contact::fill_data(int i_id)
 		std::cout << "Please fill all the fields\n" << std::endl;
 		std::cout << "Firstname : ";
 		std::getline(std::cin, first_name);
+		if (!std::cin.good())
+				break;
 		std::cout << "Lastname : ";
 		std::getline(std::cin, last_name);
+		if (!std::cin.good())
+				break;
 		std::cout << "Nickname : ";
 		std::getline(std::cin, nickname);
+		if (!std::cin.good())
+				break;
 		std::cout << "Num : ";
 		std::getline(std::cin, num);
+		if (!std::cin.good())
+				break;
 		std::cout << "Darket secret : ";
 		std::getline(std::cin, secret);
+		if (!std::cin.good())
+				break;
 		std::cout << std::endl;
 		id = i_id;
 	}
